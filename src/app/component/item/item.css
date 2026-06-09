@@ -1,0 +1,267 @@
+/* =========================================
+   IMPOSTAZIONI GLOBALI
+   ========================================= */
+body {
+  /* Un grigio appena più morbido per far risaltare le card bianche */
+  background-color: #f4f5f8;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.AI-btn {
+  margin-top: 600px;
+  margin-left: 1790px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0 !important;
+  min-width: 0 !important;
+  position: relative;
+}
+
+.AI-btn ::ng-deep .mdc-button__label,
+.AI-btn ::ng-deep .mat-button-wrapper,
+.AI-btn mat-icon {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================================
+   HEADER (Titolo e Bottone Aggiungi)
+   ========================================= */
+.header {
+  display: flex;
+  justify-content: space-between; /* Spinge il titolo a sx e il bottone a dx */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 30px auto; /* Centra l'header e dà margine in basso */
+  margin-top: 10px;
+}
+
+.header-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0 0 5px 0;
+  font-size: 32px;
+  color: #8B008B; /* IL TUO COLORE - Mantenuto intatto! */
+  font-weight: bold;
+}
+
+h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: normal;
+}
+
+.bottoneAggiungi {
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spazio tra l'icona + e il testo */
+  transition: opacity 0.2s;
+}
+
+.bottoneAggiungi:hover {
+  opacity: 0.9;
+}
+
+/* =========================================
+   TABELLA (Gestione Articoli)
+   ========================================= */
+.table-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Ombra più delicata e moderna */
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto 40px auto; /* Centrata nella pagina */
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th {
+  padding: 18px 24px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: 600;
+  color: #111;
+}
+
+.table-container td {
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.table-container tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Azioni Tabella --- */
+.header-azioni {
+  display: flex !important;
+  justify-content: center !important; /* Centra la scritta orizzontalmente */
+  align-items: center !important;     /* Centra la scritta verticalmente */
+  text-align: center !important;
+}
+
+.cella-azioni {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-action {
+  background: transparent;
+  border: 1px solid #8B008B; /* Il tuo colore per il bordo */
+  border-radius: 6px;
+  color: #8B008B;            /* Il tuo colore per l'icona interna */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Variante per il cestino */
+.btn-action.delete {
+  border-color: #d32f2f;
+  color: #d32f2f;
+}
+
+/* =========================================
+   FORM AGGIUNGI / MODIFICA (La card in basso)
+   ========================================= */
+.example-form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  padding: 30px;
+  width: 100%;
+  max-width: 700px; /* Più larga per far stare i campi affiancati come in foto */
+  margin: 0 auto;
+}
+
+.example-form h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* Griglie per allineare gli input affiancati */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.col-codice { flex: 1; }
+.col-nome { flex: 3; }
+.col-descrizione { flex: 1; }
+.col-prezzo { flex: 1; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #111;
+}
+
+.form-control {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: #8B008B;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Box per il simbolo € affiancato al prezzo */
+.input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.input-group-text {
+  background-color: #e5e7eb;
+  border: 1px solid #d1d5db;
+  border-right: none;
+  padding: 10px 16px;
+  border-radius: 6px 0 0 6px;
+  color: #374151;
+}
+
+.input-group .form-control {
+  border-radius: 0 6px 6px 0;
+  flex: 1;
+}
+
+/* --- Bottoni del Form --- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #8B008B; /* Richiamo il tuo colore! */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}

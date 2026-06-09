@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>{{ titoloDialog }}</h2>
+<mat-dialog-content>
+  <form class="example-form">
+    <div class="form-row">
+      <mat-form-field class="col-nome" appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Vaso" [(ngModel)]="item.nome" name="nome" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="col-descrizione" appearance="outline">
+        <mat-label>Descrizione</mat-label>
+        <input
+          matInput
+          placeholder="Molto Costoso"
+          [(ngModel)]="item.descrizione"
+          name="descrizione"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="col-prezzo" appearance="outline">
+        <mat-label>Prezzo (€)</mat-label>
+        <span matTextPrefix>€ &nbsp;</span>
+        <input
+          matInput
+          placeholder="10.99"
+          [(ngModel)]="item.prezzo"
+          name="prezzo"
+          (keydown.enter)="putItem()"
+        />
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="putItem()">Salva</button>
+  <button matButton mat-dialog-close>Close</button>
+</mat-dialog-actions>

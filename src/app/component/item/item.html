@@ -1,0 +1,58 @@
+<div class="header">
+  <div class="header-titles">
+    <h1>Gestione Item</h1>
+    <h2>Elenco e Struttura degli Item</h2>
+  </div>
+  <div class="bottoneAggiungi">
+    <button mat-flat-button color="primary" type="button" (click)="openDialog()">
+      <mat-icon>add</mat-icon> Aggiungi Nuovo Articolo
+    </button>
+  </div>
+</div>
+
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <thead>
+      <tr>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let item">{{ item.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let item">{{ item.nome }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="descrizione">
+          <th mat-header-cell *matHeaderCellDef>Description</th>
+          <td mat-cell *matCellDef="let item">{{ item.descrizione }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="prezzo">
+          <th mat-header-cell *matHeaderCellDef>Price</th>
+          <td mat-cell *matCellDef="let item">€ {{ item.prezzo }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="azioni">
+          <th mat-header-cell *matHeaderCellDef class="header-azioni">Action</th>
+          <td mat-cell *matCellDef="let item" class="cella-azioni">
+            <button mat-icon-button class="btn-action edit" (click)="openDialog(item)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button class="btn-action delete" (click)="openDeleteDialog(item.id!)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+      </tr>
+    </thead>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+
+<button mat-flat-button color="primary" class="AI-btn"><mat-icon>android</mat-icon></button>
+
+<app-snackbar></app-snackbar>
